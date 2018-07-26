@@ -86,6 +86,9 @@ def draw_bbox_and_class(coco,img_name,image,image_id,threshold=0.9,thick=1,show_
  return: cv2 image
  """
  image = np.asarray(image)
+ #convert the RGBA to BGRA
+ image.setflags(write=1)
+ image[:,:,0:3] = image[:,:,-2::-1]
  #1) pred box
  bbox_file = json.load(open(pred_bbox_json))
  for i in bbox_file:
