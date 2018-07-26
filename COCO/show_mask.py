@@ -107,12 +107,12 @@ def draw_bbox_and_class(coco,img_name,image,image_id,threshold=0.9,thick=1,show_
     font = cv2.FONT_HERSHEY_SIMPLEX
     ((txt_w,txt_h),_) = cv2.getTextSize(txt_str, font, font_scale, 1)
     # Place text background.
-       back_tl = vertex_1, vertex_2 - int(1.3 * txt_h)
-       back_br = vertex_1 + txt_w, vertex_2
-       image = cv2.rectangle(image, back_tl, back_br, (18, 127, 15), -1)
-       # Show text.
-       txt_tl = vertex_1, vertex_2 - int(0.3 * txt_h)
-       image = cv2.putText(image, txt_str, txt_tl, font, font_scale, (218, 227, 218), lineType=cv2.LINE_AA)
+    back_tl = vertex_1, vertex_2 - int(1.3 * txt_h)
+    back_br = vertex_1 + txt_w, vertex_2
+    image = cv2.rectangle(image, back_tl, back_br, (18, 127, 15), -1)
+    # Show text.
+    txt_tl = vertex_1, vertex_2 - int(0.3 * txt_h)
+    image = cv2.putText(image, txt_str, txt_tl, font, font_scale, (218, 227, 218), lineType=cv2.LINE_AA)
  #2) truth box
  truth_box_anno_id = coco.getAnnIds(imgIds=image_id)
  # reture is list of dic[{segmentation:,bbox:,,,},{,,,}]
