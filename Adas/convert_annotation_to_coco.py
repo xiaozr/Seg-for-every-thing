@@ -37,7 +37,7 @@ trainval_file: trainval.txt(img_name
 		for j in range(int(roidbs[0])):
 			category_id = int(roidbs[5*j+5])
 			#the first 5 class
-      if category_id > 5:
+                        if category_id > 5:
 				continue
 			idx = int(roidbs[5*j+1])
 			idy = int(roidbs[5*j+2])
